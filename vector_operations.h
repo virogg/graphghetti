@@ -7,7 +7,7 @@ struct Vector{
     double x;
     double y;
 
-    double normalize(){
+    double length(){
         return std::sqrt(x*x + y*y);
     }
 
