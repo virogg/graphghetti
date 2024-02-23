@@ -17,6 +17,9 @@ Point& Point::operator-=(const Vector& a){
     y -= a.y;
     return *this;
 }
+Vector operator-(const Point& a, const Point& b){
+    return {a.x - b.x, a.y - b.y};
+}
 //Overloading Vector operators
 Vector operator+(const Vector& a, const Vector& b){
     return {a.x + b.x, a.y + b.y};

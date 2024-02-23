@@ -26,6 +26,7 @@ struct Point{
 // Операции линейного пространства
 Point operator+(const Point& a, const Vector& b);
 Point operator-(const Point& a, const Vector& b);
+Vector operator-(const Point& a, const Point& b);
 // Операции над векторами
 Vector operator+(const Vector& a, const Vector& b);
 Vector operator-(const Vector& a, const Vector& b);
