@@ -3,14 +3,21 @@
 
 #include "cmath"
 
+struct Point;
+
 struct Vector{
     double x;
     double y;
 
-    double length(){
+    explicit Vector(double x = 0, double y = 0) : x(x), y(y) {}
+
+    explicit operator Point() const;
+
+    [[nodiscard]] double length() const{
         return std::sqrt(x*x + y*y);
     }
 
+    Vector& operator-();
     Vector& operator+=(const Vector& a);
     Vector& operator-=(const Vector& a);
     Vector& operator*=(double c);
@@ -19,6 +26,10 @@ struct Vector{
 struct Point{
     double x;
     double y;
+
+    explicit Point(double x = 0, double y = 0) : x(x), y(y) {}
+
+    explicit operator Vector() const;
 
     Point& operator+=(const Vector& a);
     Point& operator-=(const Vector& a);
