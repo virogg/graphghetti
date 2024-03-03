@@ -2,14 +2,15 @@
 #define GRAPHGHETTI_VECTOR_OPERATIONS_H
 
 #include "cmath"
+#include <climits>
 
 struct Point;
 
 struct Vector{
-    double x;
-    double y;
+    int x;
+    int y;
 
-    explicit Vector(double x = 0, double y = 0) : x(x), y(y) {}
+    explicit Vector(int x = 0, int y = 0) : x(x), y(y) {}
 
     explicit operator Point() const;
 
@@ -23,32 +24,29 @@ struct Vector{
     Vector& operator*=(double c);
     Vector& operator/=(double c);
 };
-struct Point{
-    double x;
-    double y;
 
-    explicit Point(double x = 0, double y = 0) : x(x), y(y) {}
+struct Point{
+    int x;
+    int y;
+
+    explicit Point(int x = 0, int y = 0) : x(x), y(y) {}
 
     explicit operator Vector() const;
 
     Point& operator+=(const Vector& a);
     Point& operator-=(const Vector& a);
 };
-// Операции линейного пространства
+
+// Linear Space operations
 Point operator+(const Point& a, const Vector& b);
 Point operator-(const Point& a, const Vector& b);
 Vector operator-(const Point& a, const Point& b);
-// Операции над векторами
+
+// Vector operations
 Vector operator+(const Vector& a, const Vector& b);
 Vector operator-(const Vector& a, const Vector& b);
 Vector operator*(const Vector& a, double c);
 Vector operator*(double c, const Vector& a);
 Vector operator/(const Vector& a, double c);
-
-
-
-
-
-
 
 #endif //GRAPHGHETTI_VECTOR_OPERATIONS_H

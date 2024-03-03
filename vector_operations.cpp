@@ -37,12 +37,11 @@ Vector operator/(const Vector& a, double c){
     if(c != 0.0)
         return Vector(a.x / c, a.y / c);
     else{
-        double x = std::numeric_limits<double>::max();
-        if (a.x < 0)
-            x *= -1;
-        double y = std::numeric_limits<double>::max();
-        if (a.y < 0)
-            y *= -1;
+        int64_t x = LLONG_MAX;
+        int64_t y = LLONG_MAX;
+        x *= (a.x < 0) ? -1 : 1;
+        y *= (a.y < 0) ? -1 : 1;
+
         return Vector(x, y);
     }
 }
@@ -67,13 +66,11 @@ Vector& Vector::operator*=(double c) {
     return *this;
 }
 Vector& Vector::operator/=(double c) {
-    if (c == 0) {
-        double _x = std::numeric_limits<double>::max();
-        if (x < 0)
-            _x *= -1;
-        double _y = std::numeric_limits<double>::max();
-        if (y < 0)
-            _y *= -1;
+    if (c == 0.0) {
+        int64_t _x = LLONG_MAX;
+        int64_t _y = LLONG_MAX;
+        _x *= (x < 0) ? -1 : 1;
+        _y *= (y < 0) ? -1 : 1;
         x = _x;
         y = _y;
     } else {
