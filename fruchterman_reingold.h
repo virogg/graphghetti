@@ -20,8 +20,9 @@ public:
         }
         scale_frame();
     }
+
 private:
-    const Graph& graph_;
+    const Graph &graph_;
     const double k_; // The spring constant
     double t_; // Temperature
     const int width_;
@@ -30,7 +31,7 @@ private:
     std::vector<Point> positions_;
 
     [[nodiscard]] inline double attractive_force(double x) const {
-        return x * x / k_;
+        return (x * x) / k_;
     }
 
     [[nodiscard]] inline double repulsive_force(double x) const {
@@ -38,7 +39,7 @@ private:
     }
 
     // Function to cool down the temperature
-    static inline void cool(double& t){
+    static inline void cool(double &t) {
         t *= 0.99;
         if (t < 0.001) {
             t = 0.001;

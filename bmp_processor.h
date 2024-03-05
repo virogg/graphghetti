@@ -55,7 +55,7 @@ private:
     const int width_;
     const int height_;
     std::vector<Pixel> pixels_;
-    Pixel black = {0, 0, 0};
+    Pixel black_ = {0, 0, 0};
 
     void drawLine(int64_t x1, int64_t y1, int64_t x2, int64_t y2, const Pixel& color);
     void drawCircle(int64_t x, int64_t y, int radius, const Pixel& color);

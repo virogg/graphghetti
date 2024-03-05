@@ -85,14 +85,14 @@ void BMPProcessor::drawNumber(int number, const Pixel& numberColor, int64_t star
 void BMPProcessor::drawGraph(const std::vector<Point> &positions, const Graph &g) {
     // Draw vertices
     for (auto p : positions) {
-        drawCircle(p.x, p.y, 7, black);
+        drawCircle(p.x, p.y, 7, black_);
     }
 
     // Draw edges
     for (int i = 0; i < g.size(); i++) {
         for (auto j : g.get_neighbours(i)) {
             if (j > i) continue;
-            drawLine(positions[i].x, positions[i].y, positions[j].x, positions[j].y, black);
+            drawLine(positions[i].x, positions[i].y, positions[j].x, positions[j].y, black_);
         }
     }
 
@@ -104,16 +104,16 @@ void BMPProcessor::drawGraph(const std::vector<Point> &positions, const Graph &g
 }
 
 void BMPProcessor::saveImage(const std::string& filename) {
-    std::ofstream outFile(filename, std::ios::out | std::ios::binary);
-    if (!outFile) {
+    std::ofstream out_file(filename, std::ios::out | std::ios::binary);
+    if (!out_file) {
         std::cerr << "Error: Unable to create BMP file." << "\n";
         return;
     }
 
-    outFile.write(reinterpret_cast<const char*>(&fileHeader_), sizeof(BMPFileHeader));
-    outFile.write(reinterpret_cast<const char*>(&infoHeader_), sizeof(BMPInfoHeader));
-    outFile.write(reinterpret_cast<const char*>(pixels_.data()), width_ * height_ * sizeof(Pixel));
-    outFile.close();
+    out_file.write(reinterpret_cast<const char*>(&fileHeader_), sizeof(BMPFileHeader));
+    out_file.write(reinterpret_cast<const char*>(&infoHeader_), sizeof(BMPInfoHeader));
+    out_file.write(reinterpret_cast<const char*>(pixels_.data()), width_ * height_ * sizeof(Pixel));
+    out_file.close();
 
     std::cout << "Image generated successfully!\n";
 }
