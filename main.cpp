@@ -1,6 +1,4 @@
-#include "fruchterman_reingold.h"
-#include "graph.h"
-#include "bmp_processor.h"
+#include "graph_vizualization.h"
 
 int main() {
     Graph graph;
@@ -12,7 +10,7 @@ int main() {
 
     ForceDirectedPlacement fdp(graph, width, height);
 
-    fdp.run_algorithm(0);
+    fdp.run_algorithm(1000);
 
     bmp_processor.drawGraph(fdp.get_vertices(), graph);
     bmp_processor.saveImage("graph_.bmp");
