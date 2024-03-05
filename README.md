@@ -33,7 +33,7 @@ Since the file is saved in `.bmp`, several functions have been implemented:
 |----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | 10 15 <br> 0 1 <br> 1 2 <br> 2 3 <br> 3 4 <br> 4 5 <br> 5 6 <br> 0 6 <br> 6 7 <br> 1 7 <br> 7 8 <br> 5 8 <br> 3 8 <br> 0 9 <br> 2 9 <br> 4 9       | ![](https://github.com/virogg/graphghetti/blob/main/samples/graph1.gif?raw=true) |
 
-### You can see other examples in `/sample`!
+### You can see other examples in `/samples`!
 
 ## Literature
 - [Fruchterman-Reingold algorithm](https://reingold.co/force-directed.pdf)
