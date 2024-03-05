@@ -3,12 +3,12 @@
 A graph **_G = (V, E)_** is a set **_V_** of vertices and a set **_E_** of edges, in which an edge joins a pair of vertices. Normally, graphs are depicted with their vertices as points in a plane and their edges as line or curve segments connecting those points. There are different styles of representation, suited to different types of graphs or different purposes of presentation. We concentrate on the most general class of graphs: **undirected graphs, drawn with straight edges**.
 
 ## Algorithm
-A program has been implemented that allows generating images of undirected graphs specified by a list of edges based on the Fruchterman-Reinhold algorithm.
+A program has been implemented that allows generating images of undirected graphs specified by a list of edges based on the [Fruchterman-Reingold algorithm](https://reingold.co/force-directed.pdf).
 The output image contains a minimum of vertex and edge overlays. In the image, the snowy peaks are close to each other, the non-adjacent ones are far away.
 
 The Fruchterman-Reingold algorithm was chosen to implement the graph visualization problem because of its advantages: **simplicity**, **flexibility**, **strong theoretical foundations** and **interactivity**. Among the disadvantages of this algorithm, it is worth mentioning the **long-running time for a graph with a large number of vertices**.
 
-Since it seems to favor "unmangling" over random placements, the Fruchterman-Reingold version begins by placing all vertices on a circle. The circle's radius is always 1.0, and all following calculations are done using floating point values without taking the size of the canvas into account. As a result, no bound checking is carried out, in contrast to the original Fruchterman-Reingold algorithm, and the layout can spread without constraints. After that, the final output is scaled to match the canvas's dimensions.
+Since it seems to favor "untangling" over random placements, the Fruchterman-Reingold version begins by placing all vertices on a circle. The circle's radius is always 1.0, and all following calculations are done using floating point values without taking the size of the canvas into account. As a result, no bound checking is carried out, in contrast to the original Fruchterman-Reingold algorithm, and the layout can spread without constraints. After that, the final output is scaled to match the canvas's dimensions.
 
 ## Input and Output
 The program is given a list of edges in the format: <br> 
@@ -36,6 +36,6 @@ Since the file is saved in `.bmp`, several functions have been implemented:
 You can see other examples in the `/sample`!
 
 ## Literature
-- [Fruchterman-Reingold Algorithm](https://reingold.co/force-directed.pdf)
+- [Fruchterman-Reingold algorithm](https://reingold.co/force-directed.pdf)
 - [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
 - [Force-directed graph drawing Wiki](https://en.wikipedia.org/wiki/Force-directed_graph_drawing)
