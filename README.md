@@ -37,6 +37,11 @@ The program handles different input parameters:
 4. `-height` — height of an output image. Default value is 1000px;
 5. `-iter` — number of iterations of the algorithm. Default value is 1000;
 
+### Input example
+```bash
+./graphghetti -input "../samples/bamboo_graph.txt" -output "../samples/bamboo_graph.bmp" -width 1280 -height 720
+```
+
 The result of the program is an image in a `.bmp` format:
 - The vertices are indicated by circles with a diameter of 7 pixels.
 - The vertices are signed, the signature font is 12 px.
