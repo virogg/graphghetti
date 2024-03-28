@@ -47,7 +47,7 @@ public:
     }
 
     void drawGraph(const std::vector<Point>& positions, const Graph& g);
-    void saveImage(const std::string& filename);
+    void saveImage(const std::string& path);
 
 private:
     BMPFileHeader fileHeader_;

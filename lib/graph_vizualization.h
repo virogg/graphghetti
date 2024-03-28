@@ -5,5 +5,6 @@
 #include "include/fruchterman_reingold.h"
 #include "include/graph.h"
 #include "include/vector_operations.h"
+#include "include/args_parser.h"
 
 #endif //GRAPHGHETTI_GRAPH_VIZUALIZATION_H

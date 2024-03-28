@@ -1,15 +1,20 @@
 #include "graph.h"
 #include <iostream>
+#include "fstream"
 
-Graph::Graph() {
+Graph::Graph(const std::string& path) {
+    std::ifstream fs(path);
+    if(!fs.is_open()){
+        throw std::runtime_error("Can not open the file " + path);
+    }
     size_t V;
     size_t E;
-    std::cin >> V >> E;
+    fs >> V >> E;
     graph_.resize(V);
     for (int i = 0; i < E; ++i) {
         int u;
         int v;
-        std::cin >> u >> v;
+        fs >> u >> v;
         graph_[u].push_back(v);
         graph_[v].push_back(u);
     }

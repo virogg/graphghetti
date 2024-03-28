@@ -10,10 +10,32 @@ The Fruchterman-Reingold algorithm was chosen to implement the graph visualizati
 
 Since it seems to favor "untangling" over random placements, the Fruchterman-Reingold version begins by placing all vertices on a circle. The circle's radius is always 1.0, and all following calculations are done using floating point values without taking the size of the canvas into account. As a result, no bound checking is carried out, in contrast to the original Fruchterman-Reingold algorithm, and the layout can spread without constraints. After that, the final output is scaled to match the canvas's dimensions.
 
+## How to build
+1. Clone the repository
+```bash
+git clone https://github.com/virogg/graphghetti.git
+```
+2. Change the directory to the folder
+```bash
+cd graphghetti
+```
+3. Create `build` folder
+```bash
+mkdir build && cd build
+```
+4. Use `cmake` to build the project
+```bash
+cmake .. && make
+```
+
+
 ## Input and Output
-The program is given a list of edges in the format: <br> 
-`V E` – in the first line, the number of vertices and edges. <br>
-`u v` – in the next `E` lines, the edges are set as pairs of vertex numbers.
+The program handles different input parameters:
+1. `-input` — input path to the file with vertices. **Required parameter**
+2. `-output` — output path. **Required parameter**
+3. `-width` — width of an output image. Default value is 1000px;
+4. `-height` — height of an output image. Default value is 1000px;
+5. `-iter` — number of iterations of the algorithm. Default value is 1000;
 
 The result of the program is an image in a `.bmp` format:
 - The vertices are indicated by circles with a diameter of 7 pixels.

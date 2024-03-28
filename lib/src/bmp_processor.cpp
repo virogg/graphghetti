@@ -103,8 +103,8 @@ void BMPProcessor::drawGraph(const std::vector<Point> &positions, const Graph &g
     }
 }
 
-void BMPProcessor::saveImage(const std::string& filename) {
-    std::ofstream out_file(filename, std::ios::out | std::ios::binary);
+void BMPProcessor::saveImage(const std::string& path) {
+    std::ofstream out_file(path, std::ios::out | std::ios::binary);
     if (!out_file) {
         std::cerr << "Error: Unable to create BMP file." << "\n";
         return;

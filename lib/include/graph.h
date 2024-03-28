@@ -7,7 +7,7 @@
 
 class Graph {
 public:
-    Graph();
+    Graph(const std::string& path);
 
     [[nodiscard]] size_t size() const;
 
